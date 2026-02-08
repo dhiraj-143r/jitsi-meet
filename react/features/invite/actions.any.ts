@@ -276,7 +276,7 @@ export function setCalleeInfoVisible(
  * }}
  */
 export function addPendingInviteRequest(
-        request: { callback: Function; invitees: Array<Object>; }) {
+        request: { callback: (invitees: any[]) =u003e void; invitees: Array<Object>; }) {
     return {
         type: ADD_PENDING_INVITE_REQUEST,
         request

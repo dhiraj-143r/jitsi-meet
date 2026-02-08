@@ -603,7 +603,7 @@ function _e2eeUpdated({ getState, dispatch }: IStore, conference: IJitsiConferen
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _localParticipantJoined({ getState, dispatch }: IStore, next: Function, action: AnyAction) {
+function _localParticipantJoined({ getState, dispatch }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
 
     const state = getState();
@@ -637,7 +637,7 @@ function _localParticipantJoined({ getState, dispatch }: IStore, next: Function,
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _localParticipantLeft({ dispatch }: IStore, next: Function, action: AnyAction) {
+function _localParticipantLeft({ dispatch }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
 
     dispatch(localParticipantLeft());
@@ -699,7 +699,7 @@ function _maybePlaySounds({ getState, dispatch }: IStore, action: AnyAction) {
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _participantJoinedOrUpdated(store: IStore, next: Function, action: AnyAction) {
+function _participantJoinedOrUpdated(store: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const { dispatch, getState } = store;
     const { overwrittenNameList } = store.getState()['features/base/participants'];
     const { participant: {

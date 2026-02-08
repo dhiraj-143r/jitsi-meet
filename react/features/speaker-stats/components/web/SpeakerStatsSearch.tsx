@@ -59,7 +59,7 @@ interface IProps {
     /**
      * The function to initiate the change in the speaker stats table.
      */
-    onSearch: Function;
+    onSearch: (query: string) => void;
 
 }
 

@@ -42,7 +42,7 @@ interface IProps {
     /**
      * The callback to invoke when a selection is made.
      */
-    onSelect: Function;
+    onSelect: (key: string, options?: any) => string;
 
     /**
      * The default device to display as selected.

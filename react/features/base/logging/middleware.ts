@@ -71,7 +71,7 @@ MiddlewareRegistry.register(store => next => action => {
  * @returns {Object} The new state that is the result of the reduction of the
  * specified {@code action}.
  */
-function _appWillMount({ getState }: IStore, next: Function, action: AnyAction) {
+function _appWillMount({ getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const { config } = getState()['features/base/logging'];
 
     _setLogLevels(Logger, config);
@@ -97,7 +97,7 @@ function _appWillMount({ getState }: IStore, next: Function, action: AnyAction) 
  * @private
  * @returns {*}
  */
-function _conferenceJoined({ getState }: IStore, next: Function, action: AnyAction) {
+function _conferenceJoined({ getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
 
     // Wait until the joined event is processed, so that the JitsiMeetLogStorage
     // will be ready.
@@ -212,7 +212,7 @@ function _initLogging({ dispatch, getState }: IStore,
  * @returns {Object} The new state that is the result of the reduction of the
  * specified {@code action}.
  */
-function _libWillInit({ getState }: IStore, next: Function, action: AnyAction) {
+function _libWillInit({ getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     // Adding the if in order to preserve the logic for web after enabling
     // LIB_WILL_INIT action for web in initLib action.
     if (typeof APP === 'undefined') {
@@ -236,7 +236,7 @@ function _libWillInit({ getState }: IStore, next: Function, action: AnyAction) {
  * @returns {Object} The new state that is the result of the reduction of the
  * specified action.
  */
-function _setConfig({ dispatch }: IStore, next: Function, action: AnyAction) {
+function _setConfig({ dispatch }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
 
     dispatch(setLoggingConfig(action.config?.logging));
@@ -259,7 +259,7 @@ function _setConfig({ dispatch }: IStore, next: Function, action: AnyAction) {
  * specified {@code action}.
  */
 function _setLoggingConfig({ dispatch, getState }: IStore,
-        next: Function, action: AnyAction) {
+        next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
     const newValue = getState()['features/base/logging'].config;
     const isTestingEnabled = isTestModeEnabled(getState());

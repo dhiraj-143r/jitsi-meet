@@ -15,17 +15,17 @@ interface IProps extends WithTranslation {
     /**
      * Callback used to set the 'loading' state of the parent component.
      */
-    setLoading: Function;
+    setLoading: (loading: boolean) => void;
 
     /**
      * Callback used to set the options.
      */
-    setOptions: Function;
+    setOptions: (options: any[]) => void;
 
     /**
      * Callback used to set the storedImages array.
      */
-    setStoredImages: Function;
+    setStoredImages: (images: string[]) => void;
 
     /**
      * If a label should be displayed alongside the button.

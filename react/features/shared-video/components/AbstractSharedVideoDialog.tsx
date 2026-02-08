@@ -23,7 +23,7 @@ export interface IProps extends WithTranslation {
     /**
      * Function to be invoked after typing a valid video.
      */
-    onPostSubmit: Function;
+    onPostSubmit: (key: string, options?: any) => string;
 }
 
 /**

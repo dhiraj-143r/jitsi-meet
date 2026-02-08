@@ -36,7 +36,7 @@ export function appendSuffix(displayName: string, suffix = ''): string {
  * @param {string} displayName - The display name to save.
  * @returns {boolean}
  */
-export function onSetDisplayName(dispatch: IStore['dispatch'], onPostSubmit?: Function) {
+export function onSetDisplayName(dispatch: IStore['dispatch'], onPostSubmit?: () => void) {
     return function(displayName: string) {
         if (!displayName?.trim()) {
             return false;

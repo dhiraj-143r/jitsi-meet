@@ -32,7 +32,7 @@ interface IProps {
     /**
      * On click handler.
      */
-    onClick: Function;
+    onClick: (event?: MouseEvent) => void;
 
     /**
      * {@code AbstractToolbarButton} Styles.

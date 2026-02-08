@@ -119,7 +119,7 @@ MiddlewareRegistry.register(store => next => action => {
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _endpointMessageReceived(store: IStore, next: Function, action: AnyAction) {
+function _endpointMessageReceived(store: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     let json: any = {};
 
     if (action.type === ENDPOINT_MESSAGE_RECEIVED) {

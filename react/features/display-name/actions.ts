@@ -11,8 +11,8 @@ import { DisplayNamePrompt } from './components';
  * @returns {Object}
  */
 export function openDisplayNamePrompt({ onPostSubmit, validateInput }: {
-    onPostSubmit?: Function;
-    validateInput?: Function;
+    onPostSubmit?: () => void;
+    validateInput?: (value: string) => boolean;
 }) {
     return openDialog('DisplayNamePrompt', DisplayNamePrompt, {
         onPostSubmit,

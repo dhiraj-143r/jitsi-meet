@@ -36,11 +36,11 @@ export interface IProps {
      * undefined, {@code touchFeedback} is considered defined as
      * {@code true}.
      */
-    onClick?: Function;
+    onClick?: () => void;
 
-    onKeyDown?: Function;
+    onKeyDown?: (event: React.KeyboardEvent) => void;
 
-    onKeyPress?: Function;
+    onKeyPress?: (event: React.KeyboardEvent) => void;
 
     role?: string;
 

@@ -14,13 +14,13 @@ interface IProps extends WithTranslation {
      * The callback to invoke when the component is clicked. The id of the
      * clicked on DesktopCapturerSource will be passed in.
      */
-    onClick: Function;
+    onClick: (event?: MouseEvent) => void;
 
     /**
      * The callback to invoke when the component is double clicked. The id of
      * the DesktopCapturerSource will be passed in.
      */
-    onDoubleClick: Function;
+    onDoubleClick: (event?: MouseEvent) => void;
 
     /**
      * The indicator which determines whether this DesktopSourcePreview is

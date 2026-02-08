@@ -40,25 +40,25 @@ StateListenerRegistry.register(
  */
 MiddlewareRegistry.register(store => next => action => {
     switch (action.type) {
-    case SET_CONFIG:
-    case SET_LOCATION_URL:
-        // XXX The JSON Web Token (JWT) is not the only piece of state that we
-        // have decided to store in the feature jwt
-        return _setConfigOrLocationURL(store, next, action);
-    case CONNECTION_ESTABLISHED: {
-        const state = store.getState();
-        const delayedLoadOfAvatarUrl = state['features/base/jwt'].delayedLoadOfAvatarUrl;
+        case SET_CONFIG:
+        case SET_LOCATION_URL:
+            // XXX The JSON Web Token (JWT) is not the only piece of state that we
+            // have decided to store in the feature jwt
+            return _setConfigOrLocationURL(store, next, action);
+        case CONNECTION_ESTABLISHED: {
+            const state = store.getState();
+            const delayedLoadOfAvatarUrl = state['features/base/jwt'].delayedLoadOfAvatarUrl;
 
-        if (delayedLoadOfAvatarUrl) {
-            _overwriteLocalParticipant(store, {
-                avatarURL: delayedLoadOfAvatarUrl
-            });
-            store.dispatch(setDelayedLoadOfAvatarUrl());
-            store.dispatch(setKnownAvatarUrl(delayedLoadOfAvatarUrl));
+            if (delayedLoadOfAvatarUrl) {
+                _overwriteLocalParticipant(store, {
+                    avatarURL: delayedLoadOfAvatarUrl
+                });
+                store.dispatch(setDelayedLoadOfAvatarUrl());
+                store.dispatch(setKnownAvatarUrl(delayedLoadOfAvatarUrl));
+            }
         }
-    }
-    case SET_JWT:
-        return _setJWT(store, next, action);
+        case SET_JWT:
+            return _setJWT(store, next, action);
     }
 
     return next(action);
@@ -76,8 +76,8 @@ MiddlewareRegistry.register(store => next => action => {
  * @returns {void}
  */
 function _overwriteLocalParticipant(
-        { dispatch, getState }: IStore,
-        { avatarURL, email, id: jwtId, name, features }:
+    { dispatch, getState }: IStore,
+    { avatarURL, email, id: jwtId, name, features }:
         { avatarURL?: string; email?: string; features?: any; id?: string; name?: string; }) {
     let localParticipant;
 
@@ -122,7 +122,7 @@ function _overwriteLocalParticipant(
  * @returns {Object} The new state that is the result of the reduction of the
  * specified {@code action}.
  */
-function _setConfigOrLocationURL({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _setConfigOrLocationURL({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
 
     const { locationURL } = getState()['features/base/connection'];
@@ -147,7 +147,7 @@ function _setConfigOrLocationURL({ dispatch, getState }: IStore, next: Function,
  * @returns {Object} The new state that is the result of the reduction of the
  * specified {@code action}.
  */
-function _setJWT(store: IStore, next: Function, action: AnyAction) {
+function _setJWT(store: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { jwt, type, ...actionPayload } = action;
 
@@ -203,8 +203,10 @@ function _setJWT(store: IStore, next: Function, action: AnyAction) {
                     }
 
                     _overwriteLocalParticipant(
-                        store, { ...newUser,
-                            features });
+                        store, {
+                            ...newUser,
+                        features
+                    });
 
                     // eslint-disable-next-line max-depth
                     if (context.user && context.user.role === 'visitor') {
@@ -249,12 +251,12 @@ function _setJWT(store: IStore, next: Function, action: AnyAction) {
  * @returns {void}
  */
 function _undoOverwriteLocalParticipant(
-        { dispatch, getState }: IStore,
-        { avatarURL, name, email }: { avatarURL?: string; email?: string; name?: string; }) {
+    { dispatch, getState }: IStore,
+    { avatarURL, name, email }: { avatarURL?: string; email?: string; name?: string; }) {
     let localParticipant;
 
     if ((avatarURL || name || email)
-            && (localParticipant = getLocalParticipant(getState))) {
+        && (localParticipant = getLocalParticipant(getState))) {
         const newProperties: IParticipant = {
             id: localParticipant.id,
             local: true
@@ -290,8 +292,10 @@ function _undoOverwriteLocalParticipant(
  * }}
  */
 function _user2participant({ avatar, avatarUrl, email, id, name, 'hidden-from-recorder': hiddenFromRecorder }:
-{ avatar?: string; avatarUrl?: string; email: string; 'hidden-from-recorder': string | boolean;
-    id: string; name: string; }) {
+    {
+        avatar?: string; avatarUrl?: string; email: string; 'hidden-from-recorder': string | boolean;
+        id: string; name: string;
+    }) {
     const participant: {
         avatarURL?: string;
         email?: string;

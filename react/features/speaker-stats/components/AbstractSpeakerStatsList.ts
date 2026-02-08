@@ -16,7 +16,7 @@ import {
  * @param {Object} itemStyles - Styles for the speaker stats item.
  * @returns {Function}
  */
-const abstractSpeakerStatsList = (speakerStatsItem: Function): Function[] => {
+const abstractSpeakerStatsList = (speakerStatsItem: React.ComponentTypeu003canyu003e): Arrayu003cReact.ComponentTypeu003canyu003eu003e => {
     const dispatch = useDispatch();
     const { t } = useTranslation();
     const { conference } = useSelector((state: IReduxState) => state['features/base/conference']);

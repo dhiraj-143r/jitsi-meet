@@ -19,7 +19,7 @@ interface IProps {
     /**
      * Function to be invoked when an item is pressed. The item's URL is passed.
      */
-    onPress?: Function;
+    onPress?: () => void;
 }
 
 /**

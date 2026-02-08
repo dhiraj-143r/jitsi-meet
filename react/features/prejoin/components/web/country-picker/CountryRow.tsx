@@ -12,7 +12,7 @@ interface IProps {
     /**
      * Entry click handler.
      */
-    onEntryClick: Function;
+    onEntryClick: (item: any) => void;
 }
 
 const useStyles = makeStyles()(theme => {

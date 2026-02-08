@@ -34,7 +34,7 @@ export type AbstractProps = InputProps & {
     removeAnswer: (index: number) => void;
     setAnswer: (index: number, value: IAnswerData) => void;
     setQuestion: (question: string) => void;
-    t: Function;
+    t: (key: string, options?: any) => string;
 };
 
 /**

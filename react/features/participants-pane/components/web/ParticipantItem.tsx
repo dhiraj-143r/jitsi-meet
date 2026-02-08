@@ -66,7 +66,7 @@ interface IProps extends WithTranslation {
     /**
      * Opens a drawer with participant actions.
      */
-    openDrawerForParticipant?: Function;
+    openDrawerForParticipant?: (participant: any) => void;
 
     /**
      * If an overflow drawer can be opened.

@@ -24,7 +24,7 @@ interface IProps extends WithTranslation {
      * Callback invoked when an item in the dropdown is selected. The selected
      * broadcast's boundStreamID will be passed back.
      */
-    onBroadcastSelected: Function;
+    onBroadcastSelected: (broadcast: any) => void;
 
     /**
      * The boundStreamID of the broadcast that should display as selected in the

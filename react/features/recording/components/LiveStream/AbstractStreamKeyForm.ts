@@ -40,7 +40,7 @@ export interface IProps extends WithTranslation {
     /**
      * Callback invoked when the entered stream key has changed.
      */
-    onChange: Function;
+    onChange: (value: any) => void;
 
     /**
      * The stream key value to display as having been entered so far.

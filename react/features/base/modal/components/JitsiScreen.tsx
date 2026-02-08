@@ -32,7 +32,7 @@ interface IProps {
     /**
      * Optional function that renders a footer component, if needed.
      */
-    footerComponent?: Function;
+    footerComponent?: (key: string, options?: any) =u003e string;
 
     /**
      * Is a text input rendered at the bottom of the screen?

@@ -48,7 +48,7 @@ interface IProps extends AbstractButtonProps {
     /**
      * Used to close the overflow menu after raise hand is clicked.
      */
-    onCancel: Function;
+    onCancel: () => void;
 }
 
 /**

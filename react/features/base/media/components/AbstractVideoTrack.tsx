@@ -20,7 +20,7 @@ export interface IProps {
      * Callback to invoke when the {@link Video} of {@code AbstractVideoTrack}
      * is clicked/pressed.
      */
-    onPress?: Function;
+    onPress?: () => void;
 
     /**
      * The Redux representation of the participant's video track.

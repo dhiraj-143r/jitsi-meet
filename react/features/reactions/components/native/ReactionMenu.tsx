@@ -20,7 +20,7 @@ interface IProps {
     /**
      * Used to close the overflow menu after raise hand is clicked.
      */
-    onCancel: Function;
+    onCancel: () => void;
 
     /**
      * Whether or not it's displayed in the overflow menu.

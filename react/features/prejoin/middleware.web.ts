@@ -86,7 +86,7 @@ MiddlewareRegistry.register(store => next => action => {
  * @param {Object} action - The Redux action.
  * @returns {Object}
  */
-function _conferenceJoined({ dispatch }: IStore, next: Function, action: AnyAction) {
+function _conferenceJoined({ dispatch }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     dispatch(setJoiningInProgress(false));
 
     return next(action);

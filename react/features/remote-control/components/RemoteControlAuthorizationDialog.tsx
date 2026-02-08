@@ -37,7 +37,7 @@ interface IProps {
     /**
      * Invoked to obtain translated strings.
      */
-    t: Function;
+    t: (key: string, options?: any) => string;
 }
 
 /**

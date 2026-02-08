@@ -25,7 +25,7 @@ MiddlewareRegistry.register(store => next => action => {
  * @param {Object} action - The Redux action.
  * @returns {Object}
  */
-function _conferenceFailed({ dispatch }: IStore, next: Function, action: AnyAction) {
+function _conferenceFailed({ dispatch }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const { error } = action;
 
     // We need to cover the case where knocking participant

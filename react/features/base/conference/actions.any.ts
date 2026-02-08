@@ -882,7 +882,7 @@ export function setStartReactionsMuted(muted: boolean, updateBackend = false) {
  */
 export function setPassword(
         conference: IJitsiConference | undefined,
-        method: Function | undefined,
+        method: (() => void) | undefined,
         password?: string) {
     return (dispatch: IStore['dispatch'], getState: IStore['getState']) => {
         if (!conference) {

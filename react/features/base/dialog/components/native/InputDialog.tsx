@@ -48,7 +48,7 @@ interface IProps extends AbstractProps, WithTranslation {
     /**
      * Validating of the input.
      */
-    validateInput?: Function;
+    validateInput?: (value: string) => boolean;
 }
 
 interface IState extends AbstractState {

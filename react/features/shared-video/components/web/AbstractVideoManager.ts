@@ -42,12 +42,12 @@ export interface IProps {
     /**
      * Warning that indicates an incorrect video url.
      */
-    _displayWarning: Function;
+    _displayWarning: (message: string) => void;
 
     /**
      * Docks the toolbox.
      */
-    _dockToolbox: Function;
+    _dockToolbox: (enable: boolean) => void;
 
     /**
      * Indicates whether the local audio is muted.
@@ -64,7 +64,7 @@ export interface IProps {
     /**
      * Mutes local audio track.
      */
-    _muteLocal: Function;
+    _muteLocal: () => void;
 
     /**
      * Store flag for muted state.
@@ -79,7 +79,7 @@ export interface IProps {
     /**
      * Updates the shared video status.
      */
-    _setSharedVideoStatus: Function;
+    _setSharedVideoStatus: (status: string) => void;
 
     /**
      * The shared video status.
@@ -89,7 +89,7 @@ export interface IProps {
     /**
      * Action to stop video sharing.
     */
-    _stopSharedVideo: Function;
+    _stopSharedVideo: () => void;
 
     /**
      * Seek time in seconds.
@@ -112,7 +112,7 @@ export interface IProps {
  * Manager of shared video.
  */
 class AbstractVideoManager extends PureComponent<IProps> {
-    throttledFireUpdateSharedVideoEvent: Function;
+    throttledFireUpdateSharedVideoEvent: (key: string, options?: any) => string;
 
     /**
      * Initializes a new instance of AbstractVideoManager.

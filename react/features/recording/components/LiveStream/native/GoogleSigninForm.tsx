@@ -48,7 +48,7 @@ interface IProps extends WithTranslation {
      * A callback to be invoked when an authenticated user changes, so
      * then we can get (or clear) the YouTube stream key.
      */
-    onUserChanged: Function;
+    onUserChanged: (user: any) => void;
 }
 
 /**

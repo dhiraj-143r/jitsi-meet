@@ -24,22 +24,22 @@ interface IProps {
     /**
      * Indicates if the audio muted indicator should be visible or not.
      */
-    _showAudioMutedIndicator: Boolean;
+    _showAudioMutedIndicator: boolean;
 
     /**
      * Indicates if the moderator indicator should be visible or not.
      */
-    _showModeratorIndicator: Boolean;
+    _showModeratorIndicator: boolean;
 
     /**
      * Indicates if the screen share indicator should be visible or not.
      */
-    _showScreenShareIndicator: Boolean;
+    _showScreenShareIndicator: boolean;
 
     /**
      * The ID of the participant for which the status bar is rendered.
      */
-    participantID: String;
+    participantID: string;
 
     /**
      * The type of thumbnail.
@@ -70,9 +70,9 @@ class StatusIndicators extends Component<IProps> {
 
         return (
             <>
-                { _showAudioMutedIndicator && <AudioMutedIndicator tooltipPosition = { tooltipPosition } /> }
-                { _showModeratorIndicator && <ModeratorIndicator tooltipPosition = { tooltipPosition } />}
-                { _showScreenShareIndicator && <ScreenShareIndicator tooltipPosition = { tooltipPosition } /> }
+                {_showAudioMutedIndicator && <AudioMutedIndicator tooltipPosition = { tooltipPosition } />}
+                {_showModeratorIndicator && <ModeratorIndicator tooltipPosition = { tooltipPosition } />}
+                {_showScreenShareIndicator && <ScreenShareIndicator tooltipPosition = { tooltipPosition } />}
             </>
         );
     }

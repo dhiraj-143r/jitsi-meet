@@ -32,7 +32,7 @@ interface IProps extends WithTranslation {
      * Callback to be invoked when the user picked a broadcast. To be invoked
      * with a single key (string).
      */
-    onChange: Function;
+    onChange: (value: any) => void;
 }
 
 interface IState {

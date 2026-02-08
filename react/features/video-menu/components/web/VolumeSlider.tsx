@@ -21,7 +21,7 @@ interface IProps {
     /**
      * The callback to invoke when the audio slider value changes.
      */
-    onChange: Function;
+    onChange: (value: any) => void;
 }
 
 const useStyles = makeStyles()(theme => {

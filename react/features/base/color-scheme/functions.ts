@@ -6,6 +6,6 @@
  * resolved.
  * @returns {Function}
  */
-export function schemeColor(colorDefinition: string): Function {
+export function schemeColor(colorDefinition: string): (state: any) => string {
     return () => colorDefinition;
 }

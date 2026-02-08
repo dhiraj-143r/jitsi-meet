@@ -39,7 +39,7 @@ interface IProps extends AbstractProps {
     /**
      * Function for getting the unsafe room text.
      */
-    getUnsafeRoomTextFn: Function;
+    getUnsafeRoomTextFn: () => string;
 
     /**
      * Default prop for navigating between screen components(React Navigation).
@@ -410,7 +410,7 @@ function _mapStateToProps(state: IReduxState) {
         ..._abstractMapStateToProps(state),
 
         // _reducedUI: state['features/base/responsive-ui'].reducedUI
-        getUnsafeRoomTextFn: (t: Function) => getUnsafeRoomText(state, t, 'welcome')
+        getUnsafeRoomTextFn: (t: (key: string, options?: any) => string) => getUnsafeRoomText(state, t, 'welcome')
     };
 }
 

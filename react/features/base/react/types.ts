@@ -8,7 +8,7 @@ export interface IIconButtonProps {
     id?: string;
     onPress?: (e?: GestureResponderEvent) => void;
     size?: number | string;
-    src: Function;
+    src: () =u003e any;
     style?: Object | undefined;
     tapColor?: string;
     type?: string;

@@ -100,7 +100,7 @@ interface IProps {
     /**
      * Callback invoked when {@code FeedbackDialog} is unmounted.
      */
-    onClose: Function;
+    onClose: () => void;
 
     /**
      * The title to display in the dialog. Usually the reason that triggered the feedback.

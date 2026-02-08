@@ -105,7 +105,7 @@ CallIntegration && MiddlewareRegistry.register(store => next => action => {
  * @private
  * @returns {*} The value returned by {@code next(action)}.
  */
-function _appWillMount({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _appWillMount({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
 
     const context = {
@@ -143,7 +143,7 @@ function _appWillMount({ dispatch, getState }: IStore, next: Function, action: A
  * @private
  * @returns {*} The value returned by {@code next(action)}.
  */
-function _conferenceFailed({ getState }: IStore, next: Function, action: AnyAction) {
+function _conferenceFailed({ getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
 
     if (!isCallIntegrationEnabled(getState)) {
@@ -179,7 +179,7 @@ function _conferenceFailed({ getState }: IStore, next: Function, action: AnyActi
  * @private
  * @returns {*} The value returned by {@code next(action)}.
  */
-function _conferenceJoined({ getState }: IStore, next: Function, action: AnyAction) {
+function _conferenceJoined({ getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
 
     if (!isCallIntegrationEnabled(getState)) {
@@ -224,7 +224,7 @@ function _conferenceJoined({ getState }: IStore, next: Function, action: AnyActi
  * @private
  * @returns {*} The value returned by {@code next(action)}.
  */
-function _conferenceLeft({ getState }: IStore, next: Function, action: AnyAction) {
+function _conferenceLeft({ getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
 
     if (!isCallIntegrationEnabled(getState)) {
@@ -255,7 +255,7 @@ function _conferenceLeft({ getState }: IStore, next: Function, action: AnyAction
  * @private
  * @returns {*} The value returned by {@code next(action)}.
  */
-function _conferenceWillJoin({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _conferenceWillJoin({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
 
     if (!isCallIntegrationEnabled(getState)) {
@@ -417,7 +417,7 @@ function _onPerformSetMutedCallAction({ callUUID, muted }: { callUUID: string; m
  * @private
  * @returns {*} The value returned by {@code next(action)}.
  */
-function _setAudioOnly({ getState }: IStore, next: Function, action: AnyAction) {
+function _setAudioOnly({ getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
     const state = getState();
 
@@ -451,7 +451,7 @@ function _setAudioOnly({ getState }: IStore, next: Function, action: AnyAction) 
  * @private
  * @returns {*} The value returned by {@code next(action)}.
  */
-function _setCallKitSubscriptions({ getState }: IStore, next: Function, action: AnyAction) {
+function _setCallKitSubscriptions({ getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const { subscriptions } = getState()['features/call-integration'];
 
     if (subscriptions) {
@@ -475,7 +475,7 @@ function _setCallKitSubscriptions({ getState }: IStore, next: Function, action: 
  * @private
  * @returns {*} The value returned by {@code next(action)}.
  */
-function _syncTrackState({ getState }: IStore, next: Function, action: AnyAction) {
+function _syncTrackState({ getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
 
     if (!isCallIntegrationEnabled(getState)) {

@@ -40,7 +40,7 @@ interface IProps {
     /**
      * Callback to raise menu. Used to raise menu on mobile long press.
      */
-    onRaiseMenu: Function;
+    onRaiseMenu: (participant: any) => void;
 
     /**
      * The raise context for the participant menu.
@@ -54,7 +54,7 @@ interface IProps {
     /**
      * Callback to raise participant context menu.
      */
-    raiseParticipantContextMenu: Function;
+    raiseParticipantContextMenu: (participant: any) => void;
 
     /**
      * Room reference.
@@ -78,7 +78,7 @@ interface IProps {
     /**
      * Toggles the room participant context menu.
      */
-    toggleParticipantMenu: Function;
+    toggleParticipantMenu: (participant: any) => void;
 }
 
 const useStyles = makeStyles()(theme => {

@@ -27,11 +27,11 @@ export function setNetworkInfo({ isOnline, networkType, details }: NetworkInfo) 
  * @param {Function} cleanup - The cleanup function to be called on {@code APP_WILL_UNMOUNT}.
  * @returns {{
  *     type: _STORE_NETWORK_INFO_CLEANUP,
- *     cleanup: Function
+ *     cleanup: () => void
  * }}
  * @private
  */
-export function _storeNetworkInfoCleanup(cleanup?: Function) {
+export function _storeNetworkInfoCleanup(cleanup?: () => void) {
     return {
         type: _STORE_NETWORK_INFO_CLEANUP,
         cleanup

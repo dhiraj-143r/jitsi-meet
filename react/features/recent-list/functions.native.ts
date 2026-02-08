@@ -17,7 +17,7 @@ import { IRecentItem } from './types';
  * @returns {Object}
  */
 function toDisplayableItem(item: IRecentItem,
-        defaultServerURL: string, t: Function) {
+        defaultServerURL: string, t: (key: string, options?: any) => string) {
     const location = parseURIString(item.conference);
     const baseURL = `${location.protocol}//${location.host}`;
     const serverName = baseURL === defaultServerURL ? null : location.host;
@@ -62,7 +62,7 @@ function _toDurationString(duration: number) {
  * @param {Function} t - The translate function.
  * @returns {string}
  */
-function _toDateString(itemDate: number, t: Function) {
+function _toDateString(itemDate: number, t: (key: string, options?: any) => string) {
     const m = getLocalizedDateFormatter(itemDate);
     const date = new Date(itemDate);
     const dateInMs = date.getTime();

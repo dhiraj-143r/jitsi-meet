@@ -16,17 +16,17 @@ interface IProps extends WithTranslation {
     /**
      * The handler to be invoked when a DesktopSourcePreview is clicked.
      */
-    onClick: Function;
+    onClick: (event?: MouseEvent) => void;
 
     /**
      * The handler to be invoked when a DesktopSourcePreview is double clicked.
      */
-    onDoubleClick: Function;
+    onDoubleClick: (event?: MouseEvent) => void;
 
     /**
      * The handler to be invoked if the users checks the audio screen sharing checkbox.
      */
-    onShareAudioChecked: Function;
+    onShareAudioChecked: (checked: boolean) => void;
 
     /**
      * The id of the DesktopCapturerSource that is currently selected.

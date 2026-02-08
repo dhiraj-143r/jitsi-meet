@@ -26,7 +26,7 @@ interface IProps {
      * Callback to notify the containing {@code Component} that the view is
      * closing.
      */
-    onHide: Function;
+    onHide: () => void;
 
     /**
      * Position of the SlidingView: 'left', 'right', 'top', 'bottom'.

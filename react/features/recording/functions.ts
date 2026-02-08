@@ -293,7 +293,7 @@ export function getRecordButtonProps(state: IReduxState) {
  * @param {Object | string} recorder - A participant or it's resource.
  * @returns {string|undefined}
  */
-export function getResourceId(recorder: string | { getId: Function; }) {
+export function getResourceId(recorder: string | { getId: () =u003e string; }) {
     if (recorder) {
         return typeof recorder === 'string'
             ? recorder

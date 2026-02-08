@@ -16,13 +16,13 @@ interface IProps {
      * Dispatches {@link _ADD_AUDIO_ELEMENT} Redux action which will store the
      * {@link AudioElement} for a sound in the Redux store.
      */
-    _addAudioElement: Function;
+    _addAudioElement: (key: string, options?: any) => string;
 
     /**
      * Dispatches {@link _REMOVE_AUDIO_ELEMENT} Redux action which will remove
      * the sound's {@link AudioElement} from the Redux store.
      */
-    _removeAudioElement: Function;
+    _removeAudioElement: (key: string, options?: any) => string;
 
     /**
      * It's the 'base/sounds' reducer's state mapped to a property. It's used to

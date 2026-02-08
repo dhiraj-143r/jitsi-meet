@@ -38,7 +38,7 @@ function getSecondsCount(milliseconds: number) {
  * @param {Function} t - Translate function.
  * @returns {string}
  */
-export function createLocalizedTime(time: number, t: Function) {
+export function createLocalizedTime(time: number, t: (key: string, options?: any) => string) {
     const hours = getHoursCount(time);
     const minutes = getMinutesCount(time);
     const seconds = getSecondsCount(time);
@@ -83,6 +83,6 @@ export function createLocalizedTime(time: number, t: Function) {
  * key for react to iterate upon.
  * @returns {string}
  */
-function createTimeDisplay(count: number, countNounKey: string, t: Function) {
+function createTimeDisplay(count: number, countNounKey: string, t: (key: string, options?: any) => string) {
     return t(countNounKey, { count });
 }

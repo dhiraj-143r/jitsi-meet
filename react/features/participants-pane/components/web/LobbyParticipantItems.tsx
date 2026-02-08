@@ -10,7 +10,7 @@ interface IProps {
     /**
      * Opens a drawer with actions for a knocking participant.
      */
-    openDrawerForParticipant: Function;
+    openDrawerForParticipant: (key: string, options?: any) => string;
 
     /**
      * If a drawer with actions should be displayed.

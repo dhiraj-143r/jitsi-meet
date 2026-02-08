@@ -21,7 +21,7 @@ interface IProps extends WithTranslation {
     /**
      * The icon component to use.
      */
-    icon: Function;
+    icon: React.ComponentType<any>;
 
     /**
      * The CSS classnames to set on the icon element of the component.

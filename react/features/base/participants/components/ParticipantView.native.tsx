@@ -94,7 +94,7 @@ interface IProps {
     /**
      * The function to translate human-readable text.
      */
-    t: Function;
+    t: (key: string, options?: any) => string;
 
     /**
      * The test hint id which can be used to locate the {@code ParticipantView}

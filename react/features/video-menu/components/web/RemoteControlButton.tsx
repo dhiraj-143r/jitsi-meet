@@ -25,7 +25,7 @@ interface IProps extends WithTranslation {
     /**
      * Callback to execute when the button is clicked.
      */
-    notifyClick?: Function;
+    notifyClick?: () => void;
 
     /**
      * Notify mode for `participantMenuButtonClicked` event -

@@ -41,7 +41,7 @@ MiddlewareRegistry.register(store => next => action => {
  * @returns {Object} The new state that is the result of the reduction of the
  * specified {@code action}.
  */
-function _connectionEstablished(store: IStore, next: Function, action: AnyAction) {
+function _connectionEstablished(store: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
 
     // In the Web app we explicitly do not want to display the hash and
@@ -86,7 +86,7 @@ function _connectionEstablished(store: IStore, next: Function, action: AnyAction
  * @returns {Object}
  * @private
  */
-function _connectionFailed({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _connectionFailed({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     // In the case of a split-brain error, reload early and prevent further
     // handling of the action.
     if (_isMaybeSplitBrainError(getState, action)) {
@@ -171,7 +171,7 @@ function _navigate({ dispatch, getState }: IStore) {
  * @returns {Object} The new state that is the result of the reduction of the
  * specified {@code action}.
  */
-function _setRoom(store: IStore, next: Function, action: AnyAction) {
+function _setRoom(store: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
 
     _navigate(store);

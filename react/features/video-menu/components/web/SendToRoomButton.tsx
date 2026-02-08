@@ -16,7 +16,7 @@ interface IProps extends IButtonProps {
     /**
      * Click handler.
      */
-    onClick?: Function;
+    onClick?: () => void;
 
     /**
      * The room to send the participant to.

@@ -19,7 +19,7 @@ export interface IConnectionState {
     connecting?: any;
     connection?: {
         addFeature: Function;
-        disconnect: Function;
+        disconnect: (key: string, options?: any) => string;
         getJid: () => string;
         getLogs: () => Object;
         initJitsiConference: Function;

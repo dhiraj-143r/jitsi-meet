@@ -135,8 +135,8 @@ function shouldShowPrejoin({ _showLobby, _showPrejoin, _showVisitorsQueue }: IPr
  * The conference page of the Web application.
  */
 class Conference extends AbstractConference<IProps, any> {
-    _originalOnMouseMove: Function;
-    _originalOnShowToolbar: Function;
+    _originalOnMouseMove: (event: MouseEvent) => void;
+    _originalOnShowToolbar: (show: boolean) => void;
 
     /**
      * Initializes a new Conference instance.

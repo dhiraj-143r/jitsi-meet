@@ -88,7 +88,7 @@ interface IProps {
     /**
      * Hides popover.
      */
-    hidePopover?: Function;
+    hidePopover?: () => void;
 
     /**
      * Whether the popover is visible or not.
@@ -98,7 +98,7 @@ interface IProps {
     /**
      * Shows popover.
      */
-    showPopover?: Function;
+    showPopover?: () => void;
 
     /**
      * The type of the thumbnail.

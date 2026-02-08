@@ -70,7 +70,7 @@ interface IProps {
     /**
      * Action to dispatch when the component is unmounted.
      */
-    _onUnmount: Function;
+    _onUnmount: (key: string, options?: any) => string;
 
     /**
      * The stored transforms retrieved from Redux to be initially applied
@@ -91,7 +91,7 @@ interface IProps {
     /**
      * Function to invoke when a press event is detected.
      */
-    onPress?: Function;
+    onPress?: () => void;
 
     /**
      * The id of the current stream that is displayed.

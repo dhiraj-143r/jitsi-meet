@@ -43,7 +43,7 @@ interface IProps extends WithTranslation {
     /**
      * Options change handler.
      */
-    onOptionsChange: Function;
+    onOptionsChange: (options: any) => void;
 
     /**
      * Virtual background options.

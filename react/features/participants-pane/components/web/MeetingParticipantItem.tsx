@@ -139,7 +139,7 @@ interface IProps {
     /**
      * Callback used to open an actions drawer for a participant.
      */
-    openDrawerForParticipant: Function;
+    openDrawerForParticipant: (key: string, options?: any) => string;
 
     /**
      * True if an overflow drawer should be displayed.

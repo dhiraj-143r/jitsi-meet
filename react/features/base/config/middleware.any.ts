@@ -46,7 +46,7 @@ MiddlewareRegistry.register(store => next => action => {
  * @private
  * @returns {*} The return value of {@code next(action)}.
  */
-function _setConfig({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _setConfig({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     // The reducer is doing some alterations to the config passed in the action,
     // so make sure it's the final state by waiting for the action to be
     // reduced.
@@ -96,7 +96,7 @@ function _setConfig({ dispatch, getState }: IStore, next: Function, action: AnyA
  * @private
  * @returns {*} The return value of {@code next(action)}.
  */
-function _setDynamicBrandingData({ dispatch }: IStore, next: Function, action: AnyAction) {
+function _setDynamicBrandingData({ dispatch }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const config: IConfig = {};
     const {
         customParticipantMenuButtons,
@@ -190,7 +190,7 @@ function _setDynamicBrandingData({ dispatch }: IStore, next: Function, action: A
  * @private
  * @returns {*} The return value of {@code next(action)}.
  */
-function _updateSettings({ dispatch }: IStore, next: Function, action: AnyAction) {
+function _updateSettings({ dispatch }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const { config: { doNotFlipLocalVideo } } = action;
 
     if (doNotFlipLocalVideo === true) {

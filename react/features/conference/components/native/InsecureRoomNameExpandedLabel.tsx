@@ -9,7 +9,7 @@ import getUnsafeRoomText from '../../../base/util/getUnsafeRoomText.native';
 import { INSECURE_ROOM_NAME_LABEL_COLOR } from './styles';
 
 interface IProps extends AbstractProps, WithTranslation {
-    getUnsafeRoomTextFn: Function;
+    getUnsafeRoomTextFn: () => string;
 }
 
 /**
@@ -44,7 +44,7 @@ class InsecureRoomNameExpandedLabel extends ExpandedLabel<IProps> {
  */
 function _mapStateToProps(state: IReduxState) {
     return {
-        getUnsafeRoomTextFn: (t: Function) => getUnsafeRoomText(state, t, 'meeting')
+        getUnsafeRoomTextFn: (t: (key: string, options?: any) => string) => getUnsafeRoomText(state, t, 'meeting')
     };
 }
 

@@ -21,7 +21,7 @@ interface IProps {
     /**
      * Callback used to open a drawer with admit/reject actions.
      */
-    openDrawerForParticipant: Function;
+    openDrawerForParticipant: (key: string, options?: any) => string;
 
     /**
      * If an overflow drawer should be displayed.

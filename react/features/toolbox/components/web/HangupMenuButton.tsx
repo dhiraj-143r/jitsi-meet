@@ -16,7 +16,7 @@ interface IProps extends WithTranslation {
     /**
      * ID of the menu that is controlled by this button.
      */
-    ariaControls: String;
+    ariaControls: string;
 
     /**
      * A child React Element to display within {@code InlineDialog}.
@@ -37,7 +37,7 @@ interface IProps extends WithTranslation {
     /**
      * Callback to change the visibility of the hangup menu.
      */
-    onVisibilityChange: Function;
+    onVisibilityChange: (visible: boolean) => void;
 }
 
 /**

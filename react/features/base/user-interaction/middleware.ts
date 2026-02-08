@@ -10,7 +10,7 @@ import { USER_INTERACTION_RECEIVED } from './actionTypes';
  *
  * @type {Function|null}
  */
-let userInteractionListener: Function | null = null;
+let userInteractionListener: (() => void) | null = null;
 
 /**
  * Implements the entry point of the middleware of the feature base/user-interaction.

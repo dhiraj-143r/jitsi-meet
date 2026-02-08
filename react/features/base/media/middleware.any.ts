@@ -181,7 +181,7 @@ MiddlewareRegistry.register(store => next => action => {
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _appStateChanged({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _appStateChanged({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     if (navigator.product === 'ReactNative') {
         const { appState } = action;
         const mute = appState !== 'active' && !isLocalVideoTrackDesktop(getState());
@@ -206,7 +206,7 @@ function _appStateChanged({ dispatch, getState }: IStore, next: Function, action
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _setAudioOnly({ dispatch }: IStore, next: Function, action: AnyAction) {
+function _setAudioOnly({ dispatch }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const { audioOnly } = action;
 
     sendAnalytics(createTrackMutedEvent('video', 'audio-only mode', audioOnly));
@@ -232,7 +232,7 @@ function _setAudioOnly({ dispatch }: IStore, next: Function, action: AnyAction) 
  * @returns {Object} The new state that is the result of the reduction of the
  * specified {@code action}.
  */
-function _setRoom({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _setRoom({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     // Figure out the desires/intents i.e. the state of base/media. There are
     // multiple desires/intents ordered by precedence such as server-side
     // config, config overrides in the user-supplied URL, user's own app

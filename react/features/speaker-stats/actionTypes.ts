@@ -12,7 +12,7 @@ export const INIT_SEARCH = 'INIT_SEARCH';
  *
  * {
  *     type: INIT_UPDATE_STATS,
- *     getSpeakerStats: Function
+ *     getSpeakerStats: () =u003e any
  * }
  */
 export const INIT_UPDATE_STATS = 'INIT_UPDATE_STATS';

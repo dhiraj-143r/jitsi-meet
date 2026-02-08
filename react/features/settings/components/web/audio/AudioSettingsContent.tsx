@@ -30,7 +30,7 @@ const browser = JitsiMeetJS.util.browser;
  * @param {Function} t - The translation function.
  * @returns {string}
  */
-function transformDefaultDeviceLabel(deviceId: string, label: string, t: Function) {
+function transformDefaultDeviceLabel(deviceId: string, label: string, t: (key: string, options?: any) => string) {
     return deviceId === 'default'
         ? t('settings.sameAsSystem', { label: label.replace('Default - ', '') })
         : label;
@@ -78,12 +78,12 @@ export interface IProps {
     /**
     * Used to set a new microphone as the current one.
     */
-    setAudioInputDevice: Function;
+    setAudioInputDevice: (deviceId: string) => void;
 
     /**
     * Used to set a new output device as the current one.
     */
-    setAudioOutputDevice: Function;
+    setAudioOutputDevice: (deviceId: string) => void;
 
     /**
      * Function to toggle noise suppression.

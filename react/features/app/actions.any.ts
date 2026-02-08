@@ -104,7 +104,7 @@ export function reloadWithStoredParams() {
  * @returns {boolean} Whether we will redirect or not.
  */
 export function maybeRedirectToTokenAuthUrl(
-        dispatch: IStore['dispatch'], getState: IStore['getState'], failureCallback: Function) {
+        dispatch: IStore['dispatch'], getState: IStore['getState'], failureCallback: (error: Error) => void) {
     const state = getState();
     const config = state['features/base/config'];
     const { enabled: audioOnlyEnabled } = state['features/base/audio-only'];

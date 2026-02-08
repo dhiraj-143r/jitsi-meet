@@ -465,7 +465,7 @@ interface IState {
  */
 class Filmstrip extends PureComponent <IProps, IState> {
 
-    _throttledResize: Function;
+    _throttledResize: (...args: any[]) => void;
 
     /**
      * Initializes a new {@code Filmstrip} instance.

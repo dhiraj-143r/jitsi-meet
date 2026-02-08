@@ -75,7 +75,7 @@ interface IProps {
     /**
      * Hides popover.
      */
-    hidePopover?: Function;
+    hidePopover?: () => void;
 
     /**
      * The ID for the participant on which the remote video menu will act.
@@ -90,7 +90,7 @@ interface IProps {
     /**
      * Shows popover.
      */
-    showPopover?: Function;
+    showPopover?: () => void;
 
     /**
      * The type of the thumbnail.

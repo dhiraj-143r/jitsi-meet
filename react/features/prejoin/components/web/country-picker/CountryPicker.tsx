@@ -28,17 +28,17 @@ interface IProps {
     /**
      * Handler used when user presses 'Enter'.
      */
-    onSubmit: Function;
+    onSubmit: (key: string, options?: any) => string;
 
     /**
      * Sets the dial out country.
      */
-    setDialOutCountry: Function;
+    setDialOutCountry: (country: any) => void;
 
     /**
      * Sets the dial out number.
      */
-    setDialOutNumber: Function;
+    setDialOutNumber: (number: string) => void;
 }
 
 const useStyles = makeStyles()(theme => {
@@ -151,8 +151,8 @@ function mapStateToProps(state: IReduxState) {
  * Maps redux actions to the props of the component.
  *
  * @type {{
- *     setDialOutCountry: Function,
- *     setDialOutNumber: Function
+ *     setDialOutCountry: (country: any) =u003e void,
+ *     setDialOutNumber: (number: string) =u003e void
  * }}
  */
 const mapDispatchToProps = {

@@ -57,7 +57,7 @@ const JITSI_TRACK_ERROR_TO_MESSAGE_KEY_MAP = {
 /**
  * A listener for device permissions changed reported from lib-jitsi-meet.
  */
-let permissionsListener: Function | undefined;
+let permissionsListener: (() => void) | undefined;
 
 /**
  * Implements the middleware of the feature base/devices.
@@ -203,7 +203,7 @@ MiddlewareRegistry.register(store => next => action => {
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _processPendingRequests({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _processPendingRequests({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
     const state = getState();
     const { pendingRequests } = state['features/base/devices'];

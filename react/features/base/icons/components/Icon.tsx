@@ -80,12 +80,12 @@ interface IProps extends IIconProps {
     /**
      * Keydown handler.
      */
-    onKeyDown?: Function;
+    onKeyDown?: (event: React.KeyboardEvent) => void;
 
     /**
      * Keypress handler.
      */
-    onKeyPress?: Function;
+    onKeyPress?: (event: React.KeyboardEvent) => void;
 
     /**
      * Role for the Icon.
@@ -100,7 +100,7 @@ interface IProps extends IIconProps {
     /**
      * The preloaded icon component to render.
      */
-    src: Function;
+    src: () =u003e any;
 
     /**
      * Style object to be applied.

@@ -44,7 +44,7 @@ interface IProps {
     /**
      * The redux dispatch function.
      */
-    dispatch?: Function;
+    dispatch?: (action: any) =u003e void;
 
     /**
      * The ID of the participant.

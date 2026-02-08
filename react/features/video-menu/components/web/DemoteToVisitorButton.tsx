@@ -25,7 +25,7 @@ interface IProps extends IButtonProps {
     /**
      * Click handler executed aside from the main action.
      */
-    onClick?: Function;
+    onClick?: () => void;
 }
 
 /**

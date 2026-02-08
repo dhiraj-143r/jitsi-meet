@@ -147,12 +147,12 @@ export interface IDialogTab<P> {
     cancel?: Function;
     className?: string;
     component: ComponentType<any>;
-    icon: Function;
+    icon: React.ComponentType<any>;
     labelKey: string;
     name: string;
     props?: IObject;
     propsUpdateFunction?: (tabState: IObject, newProps: P, tabStates?: (IObject | undefined)[]) => P;
-    submit?: Function;
+    submit?: (key: string, options?: any) =u003e string;
 }
 
 interface IProps extends IBaseProps {
