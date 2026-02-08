@@ -53,7 +53,7 @@ interface IProps {
     /**
      * The function called when the selection changes.
      */
-    onSelectionChange: Function;
+    onSelectionChange: (value: any) => void;
 
     /**
      * The placeholder text of the input component.
@@ -63,7 +63,7 @@ interface IProps {
     /**
      * The service providing the search.
      */
-    resourceClient: { makeQuery: Function; parseResults: Function; };
+    resourceClient: { makeQuery: Function; parseResults: (results: any) =u003e void; };
 
     /**
      * Indicates if the component should fit the container.

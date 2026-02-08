@@ -34,7 +34,7 @@ interface IProps extends WithTranslation {
     /**
      * Callback to invoke on message send.
      */
-    onSend: Function;
+    onSend: (message: string) => void;
 }
 
 interface IState {

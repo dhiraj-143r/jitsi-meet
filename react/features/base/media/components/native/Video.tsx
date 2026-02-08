@@ -13,7 +13,7 @@ import styles from './styles';
 interface IProps {
     mirror: boolean;
 
-    onPlaying: Function;
+    onPlaying: () => void;
 
     /**
      * Callback to invoke when the {@code Video} is clicked/pressed.

@@ -234,7 +234,7 @@ export function showStoppedRecordingNotification(streamType: string, participant
  */
 export function showStartedRecordingNotification(
         mode: string,
-        initiator: { getId: Function; } | string,
+        initiator: { getId: () =u003e string; } | string,
         sessionId: string) {
     return async (dispatch: IStore['dispatch'], getState: IStore['getState']) => {
         const state = getState();
@@ -413,7 +413,7 @@ export function stopLocalVideoRecording() {
  * @param {Function} openRecordingDialog - The callback to open the recording dialog.
  * @returns {void}
  */
-export function showStartRecordingNotificationWithCallback(openRecordingDialog: Function) {
+export function showStartRecordingNotificationWithCallback(openRecordingDialog: () => void) {
     return (dispatch: IStore['dispatch'], getState: IStore['getState']) => {
         let state = getState();
         const { recordings } = state['features/base/config'];

@@ -99,7 +99,7 @@ export const ENABLE_MODERATOR_LOGIN = 'ENABLE_MODERATOR_LOGIN';
  *
  * {
  *     type: WAIT_FOR_OWNER,
- *     handler: Function,
+ *     handler: () => void,
  *     timeoutMs: number
  * }
  */

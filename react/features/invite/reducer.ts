@@ -38,7 +38,7 @@ export interface IInviteState {
     numbersEnabled: boolean;
     numbersFetched: boolean;
     pendingInviteRequests: Array<{
-        callback: Function;
+        callback: (invitees: any[]) =u003e void;
         invitees: IInvitee[];
     }>;
     sipUri?: string;

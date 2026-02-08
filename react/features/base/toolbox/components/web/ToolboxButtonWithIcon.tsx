@@ -39,7 +39,7 @@ interface IProps {
     /**
      * Icon of the button.
      */
-    icon: Function;
+    icon: React.ComponentType<any>;
 
     /**
      * Flag used for disabling the small icon.
@@ -70,7 +70,7 @@ interface IProps {
     /**
      * Keydown handler for icon.
      */
-    onIconKeyDown?: Function;
+    onIconKeyDown?: (event: React.KeyboardEvent) => void;
 
     /**
      * Additional styles.
@@ -107,7 +107,7 @@ export default function ToolboxButtonWithIcon(props: IProps) {
         ariaExpanded?: boolean;
         containerId?: string;
         onClick?: (e?: React.MouseEvent) => void;
-        onKeyDown?: Function;
+        onKeyDown?: (event: React.KeyboardEvent) => void;
         role?: string;
         tabIndex?: number;
     } = {};

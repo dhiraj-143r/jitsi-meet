@@ -52,7 +52,7 @@ MiddlewareRegistry.register(store => next => action => {
  * @returns {Object} The new state that is the result of the reduction of the
  * specified action.
  */
-function _setConfig({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _setConfig({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const { initialized } = getState()['features/base/lib-jitsi-meet'];
 
     // XXX Since the config is changing, the library lib-jitsi-meet must be

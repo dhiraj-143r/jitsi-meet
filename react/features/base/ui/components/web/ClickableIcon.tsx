@@ -7,7 +7,7 @@ import Icon from '../../../icons/components/Icon';
 interface IProps {
     accessibilityLabel: string;
     className?: string;
-    icon: Function;
+    icon: React.ComponentType<any>;
     id?: string;
     onClick: () => void;
 }

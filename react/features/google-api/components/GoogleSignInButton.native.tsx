@@ -8,7 +8,7 @@ import { BUTTON_TYPES } from '../../base/ui/constants.native';
 
 import styles from './styles';
 
-// eslint-disable-next-line
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const GOOGLE_BRAND_IMAGE = require('../../../../images/btn_google_signin_dark_normal.png');
 
 /**

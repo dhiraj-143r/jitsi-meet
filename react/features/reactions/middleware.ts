@@ -197,7 +197,7 @@ MiddlewareRegistry.register((store: IStore) => (next: Function) => (action: AnyA
         const { disableReactionsModeration } = state['features/base/config'];
 
         const customActions = [ 'notify.reactionSounds' ];
-        const customFunctions: Function[] = [ () => dispatch(updateSettings({
+        const customFunctions: Arrayu003c() =u003e voidu003e = [ () => dispatch(updateSettings({
             soundsReactions: false
         })) ];
 

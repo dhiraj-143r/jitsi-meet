@@ -73,7 +73,7 @@ MiddlewareRegistry.register(store => next => action => {
  * @private
  * @returns {*}
  */
-function _conferenceJoined({ dispatch }: IStore, next: Function, action: AnyAction) {
+function _conferenceJoined({ dispatch }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     dispatch(hideDialog('PasswordRequiredPrompt', PasswordRequiredPrompt));
 
     return next(action);
@@ -91,7 +91,7 @@ function _conferenceJoined({ dispatch }: IStore, next: Function, action: AnyActi
  * @private
  * @returns {*}
  */
-function _conferenceFailed({ dispatch }: IStore, next: Function, action: AnyAction) {
+function _conferenceFailed({ dispatch }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const { conference, error } = action;
 
     if (conference && error.name === JitsiConferenceErrors.PASSWORD_REQUIRED) {
@@ -122,7 +122,7 @@ function _conferenceFailed({ dispatch }: IStore, next: Function, action: AnyActi
  * @private
  * @returns {*}
  */
-function _setPasswordFailed(store: IStore, next: Function, action: AnyAction) {
+function _setPasswordFailed(store: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     if (typeof APP !== 'undefined') {
         // TODO Remove this logic when displaying of error messages on web is
         // handled through react/redux.

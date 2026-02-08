@@ -60,7 +60,7 @@ interface IProps {
     /**
     * Callback executed when the popup closes.
     */
-    onClose: Function;
+    onClose: () => void;
 
     /**
     * A list of objects containing the labels and deviceIds
@@ -76,12 +76,12 @@ interface IProps {
     /**
     * Used to set a new microphone as the current one.
     */
-    setAudioInputDevice: Function;
+    setAudioInputDevice: (deviceId: string) => void;
 
     /**
     * Used to set a new output device as the current one.
     */
-    setAudioOutputDevice: Function;
+    setAudioOutputDevice: (deviceId: string) => void;
 }
 
 const useStyles = makeStyles()(() => {

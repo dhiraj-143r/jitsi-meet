@@ -110,7 +110,7 @@ type DocumentElement = {
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _setFullScreen(next: Function, action: AnyAction) {
+function _setFullScreen(next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
 
     const { fullScreen } = action;

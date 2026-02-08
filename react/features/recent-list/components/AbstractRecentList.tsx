@@ -22,7 +22,7 @@ interface IProps {
     /**
      * The translate function.
      */
-    t: Function;
+    t: (key: string, options?: any) => string;
 }
 
 /**

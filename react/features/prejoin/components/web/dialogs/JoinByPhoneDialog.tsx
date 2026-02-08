@@ -25,7 +25,7 @@ interface IProps {
     /**
      * The action by which the meeting calls the user.
      */
-    dialOut: Function;
+    dialOut: (key: string, options?: any) => string;
 
     /**
      * The number the conference should call.
@@ -40,12 +40,12 @@ interface IProps {
     /**
      * Fetches conference dial in numbers & conference id.
      */
-    fetchConferenceDetails: Function;
+    fetchConferenceDetails: () => void;
 
     /**
      * Joins the conference without audio.
      */
-    joinConferenceWithoutAudio: Function;
+    joinConferenceWithoutAudio: () => void;
 
     /**
      * Closes the dialog.

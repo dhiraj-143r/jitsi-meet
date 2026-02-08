@@ -24,7 +24,7 @@ interface IProps {
     /**
      * Hide popover callback.
      */
-    hidePopover?: Function;
+    hidePopover?: () => void;
 
     /**
      * Class name for the status indicators container.
@@ -54,7 +54,7 @@ interface IProps {
     /**
      * Show popover callback.
      */
-    showPopover?: Function;
+    showPopover?: () => void;
 
     /**
      * The type of thumbnail.

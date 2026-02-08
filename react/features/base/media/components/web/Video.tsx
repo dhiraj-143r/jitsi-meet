@@ -124,17 +124,17 @@ interface IProps {
     /**
      * Used on native.
      */
-    onPlaying?: Function;
+    onPlaying?: () => void;
 
     /**
      * Used on native.
      */
-    onPress?: Function;
+    onPress?: () => void;
 
     /**
      * Optional callback to invoke once the video starts playing.
      */
-    onVideoPlaying?: Function;
+    onVideoPlaying?: () => void;
 
     /**
      * Used to determine the value of the autoplay attribute of the underlying

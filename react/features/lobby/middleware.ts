@@ -276,7 +276,7 @@ function _handleLobbyNotification(store: IStore) {
  * @param {Object} action - The Redux action.
  * @returns {Object}
  */
-function _conferenceFailed({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _conferenceFailed({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const { error } = action;
     const state = getState();
     const { lobbyError, membersOnly } = state['features/base/conference'];
@@ -358,7 +358,7 @@ function _conferenceFailed({ dispatch, getState }: IStore, next: Function, actio
  * @param {Object} action - The Redux action.
  * @returns {Object}
  */
-function _conferenceJoined({ dispatch }: IStore, next: Function, action: AnyAction) {
+function _conferenceJoined({ dispatch }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     dispatch(hideLobbyScreen());
 
     return next(action);

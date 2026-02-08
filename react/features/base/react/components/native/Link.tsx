@@ -16,7 +16,7 @@ interface IProps {
     /**
      * Notifies that this Link failed to open the URL associated with it.
      */
-    onLinkingOpenURLRejected?: Function;
+    onLinkingOpenURLRejected?: (error: Error) => void;
 
     /**
      * The CSS style to be applied to this Link for the purposes of display.

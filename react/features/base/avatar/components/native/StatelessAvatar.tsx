@@ -8,7 +8,7 @@ import { IAvatarProps } from '../../types';
 
 import styles from './styles';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const DEFAULT_AVATAR = require('../../../../../../images/avatar.png');
 
 interface IProps extends IAvatarProps {
@@ -73,9 +73,9 @@ export default class StatelessAvatar extends Component<IProps> {
                         styles.avatarContainer(size) as ViewStyle,
                         style
                     ] }>
-                    { avatar }
+                    {avatar}
                 </View>
-                { this._renderAvatarStatus() }
+                {this._renderAvatarStatus()}
             </View>
         );
     }
@@ -157,7 +157,7 @@ export default class StatelessAvatar extends Component<IProps> {
                         backgroundColor: color
                     }
                 ] }>
-                <Text style = { styles.initialsText(size) as TextStyle }> { initials } </Text>
+                <Text style = { styles.initialsText(size) as TextStyle }> {initials} </Text>
             </View>
         );
     }

@@ -15,7 +15,7 @@ interface IProps {
     /**
      * The ImageSource to be rendered as image.
      */
-    src: Function;
+    src: () =u003e any;
 
     /**
      * The component's external style.

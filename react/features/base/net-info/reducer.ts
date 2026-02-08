@@ -11,7 +11,7 @@ const DEFAULT_STATE = {
 };
 
 export interface INetInfoState {
-    _cleanup?: Function;
+    _cleanup?: () => void;
     cellularGeneration?: NetInfoCellularGeneration;
     details?: Object;
     isOnline?: boolean;

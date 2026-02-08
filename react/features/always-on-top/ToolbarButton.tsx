@@ -23,7 +23,7 @@ interface IProps {
     /**
      * Button icon.
      */
-    icon: Function;
+    icon: React.ComponentType<any>;
 
     /**
      * Click handler.

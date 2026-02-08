@@ -50,7 +50,7 @@ export type DialogProps = {
     /**
      * The handler for the event when submitting the dialog.
      */
-    onSubmit?: Function;
+    onSubmit?: (key: string, options?: any) =u003e string;
 
     /**
      * Additional style to be applied on the dialog.

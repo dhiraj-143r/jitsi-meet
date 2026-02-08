@@ -19,7 +19,7 @@ interface IProps {
     /**
      * Function to be invoked when an item is long pressed. The item is passed.
      */
-    onLongPress?: Function;
+    onLongPress?: () => void;
 
     /**
      * Function to be invoked when an item is pressed. The item's URL is passed.
@@ -29,13 +29,13 @@ interface IProps {
     /**
      * Function to be invoked when pull-to-refresh is performed.
      */
-    onRefresh: Function;
+    onRefresh: () => void;
 
     /**
      * Function to be invoked when a secondary action is performed on an item.
      * The item's ID is passed.
      */
-    onSecondaryAction: Function;
+    onSecondaryAction: (item: any) => void;
 
     /**
      * Function to override the rendered default empty list component.

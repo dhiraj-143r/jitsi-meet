@@ -80,7 +80,7 @@ export function setSharedVideoStatus({ videoUrl, status, time, ownerId, muted }:
  * @param {Function} onPostSubmit - The function to be invoked when a valid link is entered.
  * @returns {Function}
  */
-export function showSharedVideoDialog(onPostSubmit: Function) {
+export function showSharedVideoDialog(onPostSubmit: (id: string) => void) {
     return openDialog('SharedVideoDialog', SharedVideoDialog, { onPostSubmit });
 }
 
@@ -176,7 +176,7 @@ export function setAllowedUrlDomians(allowedUrlDomains: Array<string>) {
  *
  * @returns {Function}
  */
-export function showConfirmPlayingDialog(actor: String, onSubmit: Function) {
+export function showConfirmPlayingDialog(actor: string, onSubmit: () => void) {
     return (dispatch: IStore['dispatch']) => {
         // shows only one dialog at a time
         dispatch(setConfirmShowVideo(false));

@@ -310,7 +310,7 @@ export function getInviteTextiOS({
     state,
     phoneNumber,
     t
-}: { phoneNumber?: string | null; state: IReduxState; t?: Function; }) {
+}: { phoneNumber?: string | null; state: IReduxState; t?: (key: string, options?: any) =u003e string; }) {
     if (!isIosMobileBrowser()) {
         return '';
     }
@@ -353,7 +353,7 @@ export function getInviteText({
     state,
     phoneNumber,
     t
-}: { phoneNumber?: string | null; state: IReduxState; t?: Function; }) {
+}: { phoneNumber?: string | null; state: IReduxState; t?: (key: string, options?: any) =u003e string; }) {
     const dialIn = state['features/invite'];
     const inviteUrl = getInviteURL(state);
     const currentLiveStreamingSession = getActiveSession(state, JitsiRecordingConstants.mode.STREAM);

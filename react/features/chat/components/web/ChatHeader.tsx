@@ -29,7 +29,7 @@ interface IProps {
     /**
      * Function to be called when pressing the close button.
      */
-    onCancel: Function;
+    onCancel: () => void;
 }
 
 /**

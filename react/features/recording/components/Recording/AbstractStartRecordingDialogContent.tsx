@@ -111,7 +111,7 @@ export interface IProps extends WithTranslation {
      * The function will be called when there are changes related to the
      * switches.
      */
-    onChange: Function;
+    onChange: (value: any) => void;
 
     /**
      * Callback to change the local recording only self setting.
@@ -121,7 +121,7 @@ export interface IProps extends WithTranslation {
     /**
      * Callback to change the audio and video recording setting.
      */
-    onRecordAudioAndVideoChange: Function;
+    onRecordAudioAndVideoChange: (checked: boolean) => void;
 
     /**
      * Callback to be invoked on sharing setting change.
@@ -131,7 +131,7 @@ export interface IProps extends WithTranslation {
     /**
      * Callback to change the transcription recording setting.
      */
-    onTranscriptionChange: Function;
+    onTranscriptionChange: (value: any) => void;
 
     /**
      * The currently selected recording service of type: RECORDING_TYPES.

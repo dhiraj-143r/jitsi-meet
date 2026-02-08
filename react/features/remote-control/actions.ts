@@ -46,8 +46,8 @@ import logger from './logger';
 /**
  * Listeners.
  */
-let permissionsReplyListener: Function | undefined,
-    receiverEndpointMessageListener: Function, stopListener: Function | undefined;
+let permissionsReplyListener: (() => void) | undefined,
+    receiverEndpointMessageListener: (event: any) =u003e void, stopListener: (() => void) | undefined;
 
 /**
  * Signals that the remote control authorization dialog should be displayed.

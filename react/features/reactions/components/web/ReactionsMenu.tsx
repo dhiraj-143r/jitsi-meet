@@ -29,7 +29,7 @@ interface IProps {
     /**
      * Docks the toolbox.
      */
-    _dockToolbox: Function;
+    _dockToolbox: (enable: boolean) => void;
 
     /**
      * Whether or not the GIF feature is enabled.
@@ -123,7 +123,7 @@ const useStyles = makeStyles<IProps>()((theme, props: IProps) => {
     };
 });
 
-const _getReactionButtons = (dispatch: IStore['dispatch'], t: Function) => {
+const _getReactionButtons = (dispatch: IStore['dispatch'], t: (key: string, options?: any) => string) => {
     let modifierKey = 'Alt';
 
     if (window.navigator?.platform) {

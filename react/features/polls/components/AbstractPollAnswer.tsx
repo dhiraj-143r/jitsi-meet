@@ -28,12 +28,12 @@ export type AbstractProps = {
     creatorName: string;
     poll: IPollData;
     sendPoll: () => void;
-    setCheckbox: Function;
+    setCheckbox: (checked: boolean, index: number) => void;
     setCreateMode: (mode: boolean) => void;
     skipAnswer: () => void;
     skipChangeVote: () => void;
     submitAnswer: () => void;
-    t: Function;
+    t: (key: string, options?: any) => string;
 };
 
 /**

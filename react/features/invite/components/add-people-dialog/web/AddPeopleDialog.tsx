@@ -96,7 +96,7 @@ interface IProps extends WithTranslation {
     /**
      * Method to update the dial in numbers.
      */
-    updateNumbers: Function;
+    updateNumbers: (numbers: string[]) => void;
 }
 
 /**

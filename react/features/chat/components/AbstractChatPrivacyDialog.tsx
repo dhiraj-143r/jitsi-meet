@@ -12,12 +12,12 @@ interface IProps extends WithTranslation {
     /**
      * Prop to be invoked on sending the message.
      */
-    _onSendMessage: Function;
+    _onSendMessage: () => void;
 
     /**
      * Prop to be invoked when the user wants to set a private recipient.
      */
-    _onSetMessageRecipient: Function;
+    _onSetMessageRecipient: (key: string, options?: any) => string;
 
     /**
      * The participant retrieved from Redux by the participantID prop.

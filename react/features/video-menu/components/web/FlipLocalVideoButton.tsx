@@ -31,7 +31,7 @@ interface IProps extends WithTranslation {
     /**
      * Callback to execute when the button is clicked.
      */
-    notifyClick?: Function;
+    notifyClick?: () => void;
 
     /**
      * Notify mode for `participantMenuButtonClicked` event -
@@ -42,7 +42,7 @@ interface IProps extends WithTranslation {
     /**
      * Click handler executed aside from the main action.
      */
-    onClick?: Function;
+    onClick?: () => void;
 }
 
 /**

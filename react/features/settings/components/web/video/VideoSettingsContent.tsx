@@ -50,12 +50,12 @@ export interface IProps {
     /**
      * Callback invoked to change current camera.
      */
-    setVideoInputDevice: Function;
+    setVideoInputDevice: (deviceId: string) => void;
 
     /**
      * Callback invoked to toggle the settings popup visibility.
      */
-    toggleVideoSettings: Function;
+    toggleVideoSettings: () => void;
 
     /**
      * All the camera device ids currently connected.

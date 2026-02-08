@@ -22,7 +22,7 @@ interface IProps {
     /**
      * The name of the icon to be used as the indicator.
      */
-    icon: Function;
+    icon: React.ComponentType<any>;
 
     /**
      * Additional style to be applied to the icon element.

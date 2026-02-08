@@ -83,7 +83,7 @@ export interface IProps {
  * Manager of shared video.
  */
 abstract class AbstractVideoManager<S=void> extends PureComponent<IProps, S> {
-    throttledFireUpdateSharedVideoEvent: Function;
+    throttledFireUpdateSharedVideoEvent: (key: string, options?: any) => string;
 
     /**
      * Initializes a new instance of AbstractVideoManager.

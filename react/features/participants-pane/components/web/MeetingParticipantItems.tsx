@@ -17,7 +17,7 @@ interface IProps {
     /**
      * Callback for the mouse leaving this item.
      */
-    lowerMenu: Function;
+    lowerMenu: (id: string) => void;
 
     /**
      * The translated text for the mute participant button.
@@ -27,7 +27,7 @@ interface IProps {
     /**
      * Callback used to open an actions drawer for a participant.
      */
-    openDrawerForParticipant: Function;
+    openDrawerForParticipant: (key: string, options?: any) => string;
 
     /**
      * True if an overflow drawer should be displayed.
@@ -57,7 +57,7 @@ interface IProps {
     /**
      * Callback for the activation of this item's context menu.
      */
-    toggleMenu: Function;
+    toggleMenu: (id: string) => void;
 
     /**
      * The translated "you" text.

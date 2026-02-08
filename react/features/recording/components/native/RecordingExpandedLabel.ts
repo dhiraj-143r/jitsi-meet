@@ -27,7 +27,7 @@ interface IProps extends AbstractProps {
     /**
      * Function to be used to translate i18n labels.
      */
-    t: Function;
+    t: (key: string, options?: any) => string;
 }
 
 /**

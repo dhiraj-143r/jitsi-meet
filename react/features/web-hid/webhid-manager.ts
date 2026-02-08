@@ -23,7 +23,7 @@ export default class WebHidManager extends EventTarget {
     deviceInfo: IDeviceInfo;
     availableDevices: HIDDevice[];
     isParseDescriptorsSuccess: boolean;
-    outputEventGenerators: { [key: string]: Function; };
+    outputEventGenerators: { [key: string]: () =u003e void; };
     deviceCommand = {
         outputReport: {
             mute: {

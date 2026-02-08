@@ -20,7 +20,7 @@ interface IProps {
     /**
      * Removes reaction from redux state.
      */
-    reactionRemove: Function;
+    reactionRemove: (reaction: string) => void;
 
     /**
      * Id of the reaction.

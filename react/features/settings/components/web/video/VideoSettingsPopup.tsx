@@ -38,7 +38,7 @@ interface IProps {
     /**
     * Callback executed when the popup closes.
     */
-    onClose: Function;
+    onClose: () => void;
 
     /**
      * The popup placement enum value.
@@ -48,7 +48,7 @@ interface IProps {
     /**
      * Callback invoked to change current camera.
      */
-    setVideoInputDevice: Function;
+    setVideoInputDevice: (deviceId: string) => void;
 
     /**
      * All the camera device ids currently connected.

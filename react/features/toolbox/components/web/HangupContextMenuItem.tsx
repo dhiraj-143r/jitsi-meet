@@ -38,7 +38,7 @@ interface IProps {
     /**
      * Callback that performs the actual hangup action.
      */
-    onClick: Function;
+    onClick: (event?: MouseEvent) => void;
 }
 
 /**

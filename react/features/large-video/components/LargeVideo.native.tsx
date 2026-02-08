@@ -51,7 +51,7 @@ interface IProps {
     /**
      * Callback to invoke when the {@code LargeVideo} is clicked/pressed.
      */
-    onClick?: Function;
+    onClick?: () => void;
 }
 
 /**

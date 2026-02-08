@@ -19,12 +19,12 @@ interface IProps extends WithTranslation {
     /**
      * Submit handler.
      */
-    onSubmit: Function;
+    onSubmit: (key: string, options?: any) => string;
 
     /**
      * Handler for text button.
      */
-    onTextButtonClick: Function;
+    onTextButtonClick: () => void;
 }
 
 const useStyles = makeStyles()(theme => {

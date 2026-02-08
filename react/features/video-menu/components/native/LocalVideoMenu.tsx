@@ -50,7 +50,7 @@ interface IProps {
     /**
      * Translation function.
      */
-    t: Function;
+    t: (key: string, options?: any) => string;
 }
 
 /**

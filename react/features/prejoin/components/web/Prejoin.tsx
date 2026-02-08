@@ -59,12 +59,12 @@ interface IProps {
     /**
      * Joins the current meeting.
      */
-    joinConference: Function;
+    joinConference: () => void;
 
     /**
      * Joins the current meeting without audio.
      */
-    joinConferenceWithoutAudio: Function;
+    joinConferenceWithoutAudio: () => void;
 
     /**
      * Whether conference join is in progress.
@@ -94,7 +94,7 @@ interface IProps {
     /**
      * Sets visibility of the 'JoinByPhoneDialog'.
      */
-    setJoinByPhoneDialogVisiblity: Function;
+    setJoinByPhoneDialogVisiblity: (visible: boolean) => void;
 
     /**
      * Flag signaling the visibility of camera preview.
@@ -129,7 +129,7 @@ interface IProps {
     /**
      * Updates settings.
      */
-    updateSettings: Function;
+    updateSettings: (settings: any) => void;
 
     /**
      * The JitsiLocalTrack to display.

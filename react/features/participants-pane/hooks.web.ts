@@ -25,7 +25,7 @@ const participants = {
  * @param {Function} closeDrawer - Callback for closing the drawer.
  * @returns {Array<Function>}
  */
-export function useLobbyActions(participant?: IDrawerParticipant | null, closeDrawer?: Function) {
+export function useLobbyActions(participant?: IDrawerParticipant | null, closeDrawer?: () => void) {
     const dispatch = useDispatch();
 
     return [

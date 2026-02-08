@@ -5,7 +5,7 @@ import ConfirmDialog
     from '../../../base/dialog/components/native/ConfirmDialog';
 
 interface ILogoutDialogProps extends WithTranslation {
-    onLogout: Function;
+    onLogout: (key: string, options?: any) => string;
 }
 
 

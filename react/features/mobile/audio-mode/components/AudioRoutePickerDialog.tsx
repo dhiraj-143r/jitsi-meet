@@ -31,7 +31,7 @@ interface IDevice {
     /**
      * Name of the icon which will be rendered on the right.
      */
-    icon: Function;
+    icon: React.ComponentType<any>;
 
     /**
      * True if the element is selected (will be highlighted in blue),
@@ -99,7 +99,7 @@ interface IProps {
     /**
      * Invoked to obtain translated strings.
      */
-    t: Function;
+    t: (key: string, options?: any) => string;
 }
 
 /**

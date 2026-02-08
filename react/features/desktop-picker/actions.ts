@@ -15,7 +15,7 @@ type Options = {
  * a DesktopCapturerSource has been chosen.
  * @returns {Object}
  */
-export function showDesktopPicker(options: Options = {}, onSourceChoose: Function) {
+export function showDesktopPicker(options: Options = {}, onSourceChoose: (sourceId: string, type: string, name: string) => void) {
     const { desktopSharingSources } = options;
 
     return openDialog('DesktopPicker', DesktopPicker, {

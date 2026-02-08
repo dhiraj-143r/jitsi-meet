@@ -16,10 +16,10 @@ export interface IProps extends WithTranslation {
     /**
      * Function to be invoked after a successful display name change.
      */
-    onPostSubmit?: Function;
+    onPostSubmit?: () => void;
 
     /**
      * Function to be invoked after a display name change.
      */
-    validateInput?: Function;
+    validateInput?: (value: string) => boolean;
 }

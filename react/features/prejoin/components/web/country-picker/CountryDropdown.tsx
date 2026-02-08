@@ -10,7 +10,7 @@ interface IProps {
     /**
      * Click handler for a single entry.
      */
-    onEntryClick: Function;
+    onEntryClick: (item: any) => void;
 }
 
 const useStyles = makeStyles()(theme => {

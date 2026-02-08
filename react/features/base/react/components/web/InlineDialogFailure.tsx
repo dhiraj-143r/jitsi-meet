@@ -31,7 +31,7 @@ interface IProps {
     /**
      * Allows to retry the call that previously didn't succeed.
      */
-    onRetry: Function;
+    onRetry: () => void;
 
     /**
      * Indicates whether the support link should be shown in case of an error.

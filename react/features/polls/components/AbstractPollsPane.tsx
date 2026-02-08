@@ -13,7 +13,7 @@ export type AbstractProps = {
     isCreatePollsDisabled: boolean;
     onCreate: () => void;
     setCreateMode: (mode: boolean) => void;
-    t: Function;
+    t: (key: string, options?: any) => string;
 };
 
 /**

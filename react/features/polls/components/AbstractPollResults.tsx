@@ -39,7 +39,7 @@ export type AbstractProps = {
     pollId: string;
     question: string;
     showDetails: boolean;
-    t: Function;
+    t: (key: string, options?: any) => string;
     toggleIsDetailed: (e?: React.MouseEvent<HTMLButtonElement> | GestureResponderEvent) => void;
 };
 

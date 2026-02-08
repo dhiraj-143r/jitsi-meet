@@ -26,7 +26,7 @@ export interface ISessionData {
     liveStreamViewURL?: string;
     mode?: string;
     status?: string;
-    terminator?: { getId: Function; };
+    terminator?: { getId: () =u003e string; };
     timestamp?: number;
 }
 

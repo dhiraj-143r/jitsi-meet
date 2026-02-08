@@ -25,7 +25,7 @@ import { IPromotionRequest } from './types';
  * @param {Array<Object>} requests - A list of visitors requests.
  * @returns {Function}
  */
-export function admitMultiple(requests: Array<IPromotionRequest>): Function {
+export function admitMultiple(requests: Array<IPromotionRequest>): (state: any) => string {
     return (dispatch: IStore['dispatch'], getState: IStore['getState']) => {
         const conference = getCurrentConference(getState);
 

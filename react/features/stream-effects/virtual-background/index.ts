@@ -56,6 +56,7 @@ export async function createVirtualBackgroundEffect(virtualBackground: IBackgrou
 
     if (!tflite) {
         try {
+            // eslint-disable-next-line @typescript-eslint/no-require-imports
             wasmCheck = require('wasm-check');
             const tfliteTimeout = 10000;
 

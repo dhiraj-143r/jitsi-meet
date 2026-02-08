@@ -27,7 +27,7 @@ MiddlewareRegistry.register(store => next => action => {
  * @private
  * @returns {Object} The new state that is the result of the reduction of the specified {@code action}.
  */
-function _appWillMount(store: IStore, next: Function, action: AnyAction) {
+function _appWillMount(store: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     if (isOldJitsiMeetElectronApp()) {
         const { dispatch } = store;
 

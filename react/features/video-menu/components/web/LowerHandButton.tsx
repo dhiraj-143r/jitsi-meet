@@ -13,7 +13,7 @@ interface IProps {
     /**
      * The ID of the participant that's linked to the button.
      */
-    participantID?: String;
+    participantID?: string;
 }
 
 /**

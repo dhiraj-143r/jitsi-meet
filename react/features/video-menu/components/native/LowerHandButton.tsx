@@ -19,7 +19,7 @@ interface IProps extends AbstractButtonProps {
      * The ID of the participant object that this button is supposed to
      * ask to lower the hand.
      */
-    participantId: String | undefined;
+    participantId: string | undefined;
 }
 
 /**

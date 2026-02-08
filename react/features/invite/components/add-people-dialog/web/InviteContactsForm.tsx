@@ -63,7 +63,7 @@ interface IProps extends AbstractProps {
     /**
      * Invoked to obtain translated strings.
      */
-    t: Function;
+    t: (key: string, options?: any) => string;
 }
 
 /**
@@ -74,7 +74,7 @@ class InviteContactsForm extends AbstractAddPeopleDialog<IProps, IState> {
 
     _resourceClient: {
         makeQuery: (query: string) => Promise<Array<any>>;
-        parseResults: Function;
+        parseResults: (results: any) =u003e void;
     };
 
     _translations: {

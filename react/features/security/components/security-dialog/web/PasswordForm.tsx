@@ -24,7 +24,7 @@ interface IProps {
      * Callback to invoke when the local participant is submitting a password
      * set request.
      */
-    onSubmit: Function;
+    onSubmit: (key: string, options?: any) => string;
 
     /**
      * The current known password for the JitsiConference.

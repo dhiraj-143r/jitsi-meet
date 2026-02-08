@@ -35,7 +35,7 @@ export interface IProps extends WithTranslation {
     /**
      * Dialog callback that indicates if the background preview was loaded.
      */
-    loadedPreview: Function;
+    loadedPreview: (loaded: boolean) => void;
 
     /**
      * Represents the virtual background set options.

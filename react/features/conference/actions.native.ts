@@ -14,7 +14,7 @@ import { DISMISS_CALENDAR_NOTIFICATION } from './actionTypes';
  * @param {?Function} submit - The function to execute after submitting the dialog.
  * @returns {Function}
  */
-export function notifyKickedOut(participant: any, submit?: Function) {
+export function notifyKickedOut(participant: any, submit?: () => void) {
     return (dispatch: IStore['dispatch'], getState: IStore['getState']) => {
         if (participant?.isReplaced?.()) {
             submit?.();
@@ -41,7 +41,7 @@ export function notifyKickedOut(participant: any, submit?: Function) {
  * @param {?Function} submit - The function to execute after submitting the dialog.
  * @returns {Function}
  */
-export function notifyConferenceFailed(reasonKey: string, submit?: Function) {
+export function notifyConferenceFailed(reasonKey: string, submit?: () => void) {
     return (dispatch: IStore['dispatch']) => {
         if (!reasonKey) {
             submit?.();

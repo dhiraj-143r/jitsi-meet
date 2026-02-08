@@ -44,7 +44,7 @@ interface IProps {
     /**
      * Click handler for the component.
      */
-    onClick: Function;
+    onClick: (event?: MouseEvent) => void;
 }
 
 const useStyles = makeStyles()(() => {

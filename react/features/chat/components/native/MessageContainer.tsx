@@ -11,7 +11,7 @@ import styles from './styles';
 
 interface IProps {
     messages: IMessage[];
-    t: Function;
+    t: (key: string, options?: any) => string;
 }
 
 /**

@@ -35,10 +35,10 @@ export interface IRemoteControlState {
         controller?: string;
         enabled: boolean;
         transport?: {
-            dispose: Function;
-            on: Function;
-            sendEvent: Function;
-            sendRequest: Function;
+            dispose: () =u003e void;
+            on: (event: string, handler: Function) =u003e void;
+            sendEvent: (key: string, options?: any) => string;
+            sendRequest: (key: string, options?: any) => string;
         };
     };
 }

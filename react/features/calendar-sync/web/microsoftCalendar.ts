@@ -118,7 +118,7 @@ export const microsoftCalendarApi = {
      *
      * @returns {function(Dispatch<*, Function>): Promise<string>}
      */
-    getCurrentEmail(): Function {
+    getCurrentEmail(): (state: any) => string {
         return (dispatch: IStore['dispatch'], getState: IStore['getState']) => {
             const { msAuthState = {} }
                 = getState()['features/calendar-sync'] || {};

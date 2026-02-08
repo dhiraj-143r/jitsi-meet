@@ -13,7 +13,7 @@ export * from './functions.any';
  * @param {Function} t - The translation function.
  * @returns {void}
  */
-export function maybeShowSuboptimalExperienceNotification(dispatch: IStore['dispatch'], t: Function) {
+export function maybeShowSuboptimalExperienceNotification(dispatch: IStore['dispatch'], t: (key: string, options?: any) => string) {
     if (isSuboptimalBrowser()) {
         dispatch(
             showWarningNotification(

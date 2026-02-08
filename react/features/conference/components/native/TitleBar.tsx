@@ -39,7 +39,7 @@ interface IProps {
      * Creates a function to be invoked when the onPress of the touchables are
      * triggered.
      */
-    _createOnPress: Function;
+    _createOnPress: () => () => void;
 
     /**
      * Whether participants feature is enabled or not.

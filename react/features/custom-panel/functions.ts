@@ -29,7 +29,7 @@ export function getCustomPanelUrl(): string {
  *
  * @returns {Function | undefined} The icon component.
  */
-export function getCustomPanelIcon(): Function | undefined {
+export function getCustomPanelIcon(): (() => void) | undefined {
     return undefined;
 }
 

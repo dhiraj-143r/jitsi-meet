@@ -13,7 +13,7 @@ interface IProps {
      * Callback to invoke when a smiley is selected. The smiley will be passed
      * back.
      */
-    onSmileySelect: Function;
+    onSmileySelect: (key: string, options?: any) => string;
 }
 
 /**

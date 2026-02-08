@@ -73,8 +73,8 @@ const STATUS_REQ_CAP = 45;
  */
 function pollForStatus(
         reqId: string,
-        onSuccess: Function,
-        onFail: Function,
+        onSuccess: (code: string) => void,
+        onFail: (error?: Error) => void,
         count = 0) {
     return async function(dispatch: IStore['dispatch'], getState: IStore['getState']) {
         const state = getState();
@@ -141,7 +141,7 @@ function pollForStatus(
  * @param {Function} onFail - Fail handler.
  * @returns {Function}
  */
-export function dialOut(onSuccess: Function, onFail: Function) {
+export function dialOut(onSuccess: (code: string) => void, onFail: Function) {
     return async function(dispatch: IStore['dispatch'], getState: IStore['getState']) {
         const state = getState();
         const reqId = uuidv4();

@@ -14,7 +14,7 @@ export interface IAbstractLanguageSelectorDialogProps {
     listItems: Array<any>;
     onLanguageSelected: (e: string) => void;
     subtitles: string;
-    t: Function;
+    t: (key: string, options?: any) => string;
 }
 
 

@@ -32,7 +32,7 @@ export const _initLogging = once(() => {
     }
 
     // Lazy load it to avoid cycles in early web bootstrap code.
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const { default: JitsiMeetJS } = require('../lib-jitsi-meet/_');
 
     Logger.setGlobalOptions(DEFAULT_RN_OPTS);

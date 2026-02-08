@@ -49,7 +49,7 @@ MiddlewareRegistry.register(store => next => action => {
  * @private
  * @returns {*} The result returned by {@code next(action)}.
  */
-function _appWillMount({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _appWillMount({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
 
     // It's an opportune time to transfer the feature recent-list's knowledge
@@ -82,7 +82,7 @@ function _appWillMount({ dispatch, getState }: IStore, next: Function, action: A
  * @private
  * @returns {*} The result returned by {@code next(action)}.
  */
-function _conferenceWillLeave({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _conferenceWillLeave({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const state = getState();
     const { doNotStoreRoom } = state['features/base/config'];
 
@@ -127,7 +127,7 @@ function _conferenceWillLeave({ dispatch, getState }: IStore, next: Function, ac
  * @private
  * @returns {*} The result returned by {@code next(action)}.
  */
-function _setRoom({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _setRoom({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const { doNotStoreRoom } = getState()['features/base/config'];
 
     if (!doNotStoreRoom && !isEmbedded() && action.room) {

@@ -118,7 +118,7 @@ const styles = (theme: Theme) => {
 class VideoQualitySlider extends Component<IProps> {
     _sliderOptions: Array<{
         audioOnly?: boolean;
-        onSelect: Function;
+        onSelect: (key: string, options?: any) => string;
         textKey: string;
         videoQuality?: number;
     }>;

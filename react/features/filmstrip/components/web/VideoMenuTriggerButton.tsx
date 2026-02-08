@@ -8,7 +8,7 @@ interface IProps {
     /**
      * Hide popover callback.
      */
-    hidePopover?: Function;
+    hidePopover?: () => void;
 
     /**
      * Whether or not the button is for the local participant.
@@ -28,7 +28,7 @@ interface IProps {
     /**
      * Show popover callback.
      */
-    showPopover?: Function;
+    showPopover?: () => void;
 
     /**
      * The type of thumbnail.

@@ -24,7 +24,7 @@ interface IProps extends WithTranslation {
     /**
      * Click handler for primary button.
      */
-    onPrimaryButtonClick: Function;
+    onPrimaryButtonClick: () => void;
 
     /**
      * Click handler for the small additional text.

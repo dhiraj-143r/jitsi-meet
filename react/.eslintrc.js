@@ -7,16 +7,14 @@ module.exports = {
     ],
     overrides: [
         {
-            files: [ '*.ts', '*.tsx' ],
-            extends: [ '@jitsi/eslint-config/typescript' ],
+            files: ['*.ts', '*.tsx'],
+            extends: ['@jitsi/eslint-config/typescript'],
             parserOptions: {
-                project: [ './tsconfig.web.json', './tsconfig.native.json' ]
+                project: ['./tsconfig.web.json', './tsconfig.native.json']
             },
             rules: {
-                // TODO: Remove these and fix the warnings
-                '@typescript-eslint/no-unsafe-function-type': 0,
-                '@typescript-eslint/no-wrapper-object-types': 0,
-                '@typescript-eslint/no-require-imports': 0
+                // Working on remaining Function type violations (~165 remaining)
+                '@typescript-eslint/no-unsafe-function-type': 'warn'
             }
         }
     ],

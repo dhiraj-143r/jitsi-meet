@@ -173,7 +173,7 @@ StateListenerRegistry.register(
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _conferenceFailed({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _conferenceFailed({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const { conference, error } = action;
 
     const result = next(action);
@@ -324,7 +324,7 @@ function _conferenceFailed({ dispatch, getState }: IStore, next: Function, actio
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _conferenceJoined({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _conferenceJoined({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
     const { conference } = action;
     const { pendingSubjectChange } = getState()['features/base/conference'];
@@ -388,7 +388,7 @@ function _conferenceJoined({ dispatch, getState }: IStore, next: Function, actio
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-async function _connectionEstablished({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+async function _connectionEstablished({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
 
     const { tokenAuthUrl = false } = getState()['features/base/config'];
@@ -442,7 +442,7 @@ function _logJwtErrors(message: string, errors: string) {
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _connectionFailed({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _connectionFailed({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const { connection, error } = action;
     const { jwt } = getState()['features/base/jwt'];
 
@@ -537,7 +537,7 @@ function _connectionFailed({ dispatch, getState }: IStore, next: Function, actio
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _conferenceSubjectChanged({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _conferenceSubjectChanged({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
     const { subject } = getState()['features/base/conference'];
 
@@ -580,7 +580,7 @@ function _conferenceWillLeave({ getState }: IStore) {
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _pinParticipant({ getState }: IStore, next: Function, action: AnyAction) {
+function _pinParticipant({ getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const state = getState();
     const { conference } = state['features/base/conference'];
 
@@ -642,7 +642,7 @@ function _removeUnloadHandler(getState: IStore['getState']) {
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _sendTones({ getState }: IStore, next: Function, action: AnyAction) {
+function _sendTones({ getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const state = getState();
     const { conference } = state['features/base/conference'];
 
@@ -669,7 +669,7 @@ function _sendTones({ getState }: IStore, next: Function, action: AnyAction) {
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _setRoom({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _setRoom({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const state = getState();
     const { localSubject, subject } = state['features/base/config'];
     const { room } = action;
@@ -697,7 +697,7 @@ function _setRoom({ dispatch, getState }: IStore, next: Function, action: AnyAct
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-async function _trackAddedOrRemoved(store: IStore, next: Function, action: AnyAction) {
+async function _trackAddedOrRemoved(store: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const track = action.track;
 
     // TODO All track swapping should happen here instead of conference.js.
@@ -748,7 +748,7 @@ async function _trackAddedOrRemoved(store: IStore, next: Function, action: AnyAc
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _updateLocalParticipantInConference({ dispatch, getState }: IStore, next: Function, action: AnyAction) {
+function _updateLocalParticipantInConference({ dispatch, getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const { conference } = getState()['features/base/conference'];
     const { participant } = action;
     const result = next(action);
@@ -789,7 +789,7 @@ function _updateLocalParticipantInConference({ dispatch, getState }: IStore, nex
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _p2pStatusChanged(next: Function, action: AnyAction) {
+function _p2pStatusChanged(next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
 
     if (typeof APP !== 'undefined') {
@@ -813,7 +813,7 @@ function _p2pStatusChanged(next: Function, action: AnyAction) {
  * @private
  * @returns {Object} The value returned by {@code next(action)}.
  */
-function _setAssumedBandwidthBps({ getState }: IStore, next: Function, action: AnyAction) {
+function _setAssumedBandwidthBps({ getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const state = getState();
     const conference = getCurrentConference(state);
     const payload = Number(action.assumedBandwidthBps);

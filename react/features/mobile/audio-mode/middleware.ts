@@ -155,7 +155,7 @@ function _setSubscriptions({ getState }: IStore) {
  * @private
  * @returns {*} The value returned by {@code next(action)}.
  */
-function _updateAudioMode({ getState }: IStore, next: Function, action: AnyAction) {
+function _updateAudioMode({ getState }: IStore, next: (action: AnyAction) => any, action: AnyAction) {
     const result = next(action);
     const state = getState();
     const conference = getCurrentConference(state);

@@ -56,7 +56,7 @@ export interface IProps extends WithTranslation {
     /**
      * The icon to render for this {@code ToolboxItem}.
      */
-    icon: Function;
+    icon: React.ComponentType<any>;
 
     /**
      * The text associated with this item. When `showLabel` is set to

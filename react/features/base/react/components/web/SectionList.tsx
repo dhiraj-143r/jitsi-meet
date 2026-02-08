@@ -15,22 +15,22 @@ interface IProps {
      * Used to extract a unique key for a given item at the specified index.
      * Key is used for caching and as the react key to track item re-ordering.
      */
-    keyExtractor: Function;
+    keyExtractor: (item: any) => string;
 
     /**
      * Defines what happens when  an item in the section list is clicked.
      */
-    onItemClick: Function;
+    onItemClick: (item: any) => void;
 
     /**
      * Returns a React component that renders each Item in the list.
      */
-    renderItem: Function;
+    renderItem: (item: any) => React.ReactNode;
 
     /**
      * Returns a React component that renders the header for every section.
      */
-    renderSectionHeader: Function;
+    renderSectionHeader: (section: any) => React.ReactNode;
 
     /**
      * An array of sections.

@@ -110,7 +110,7 @@ const CONNECTION_TYPE_MAP: {
     [key: string]: {
         connectionClass: string;
         connectionText: string;
-        icon: Function;
+        icon: React.ComponentType<any>;
     };
 } = {
     [CONNECTION_TYPE.FAILED]: {

@@ -54,7 +54,7 @@ interface IProps extends WithTranslation {
      * The callback to be invoked when the component is closed or when a
      * DesktopCapturerSource has been chosen.
      */
-    onSourceChoose: Function;
+    onSourceChoose: (sourceId: string) => void;
 }
 
 /**
